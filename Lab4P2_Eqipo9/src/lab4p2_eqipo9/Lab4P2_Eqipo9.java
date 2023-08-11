@@ -32,6 +32,7 @@ static Scanner leer2 = new Scanner(System.in);//para strings
                     
                     break;
                 case 4:
+                    agregar_movimiento();
                     break;
                 case 5: 
                     System.out.println("Saliendo del menu...");
@@ -64,9 +65,9 @@ static Scanner leer2 = new Scanner(System.in);//para strings
             System.out.println("Ingrese la descripcion del movimiento: ");
             String descripcion = leer2.nextLine();
             System.out.println("Ingrese los puntos de poder");
-            int puntos_poder = leer2.nextInt();
+            int puntos_poder = leer.nextInt();
             System.out.println("Ingrese los puntos de precision");
-            int puntos_precision = leer2.nextInt();
+            int puntos_precision = leer.nextInt();
             movimiento[0] = new fisico(puntos_poder, puntos_precision, nombre, descripcion);
 
         } else if (tipo == 3) {
@@ -75,12 +76,38 @@ static Scanner leer2 = new Scanner(System.in);//para strings
             System.out.println("Ingrese la descripcion del movimiento: ");
             String descripcion = leer2.nextLine();
             System.out.println("Ingrese los puntos de poder");
-            int puntos_poderE = leer2.nextInt();
+            int puntos_poderE = leer.nextInt();
             System.out.println("Ingrese los puntos de precision");
-            int puntos_precisionE = leer2.nextInt();
+            int puntos_precisionE = leer.nextInt();
             movimiento[0] = new especial(puntos_poderE, puntos_precisionE, nombre, descripcion);
 
 
         }
+    }
+    
+    public static void agregar_pokemon() {
+        movimiento[] movimiento = new movimiento[4];
+
+        System.out.println("ingrese la especie: ");
+        String especie = leer2.nextLine();
+        System.out.println("ingrese el nivel del pokemon: ");
+        int nivel = leer.nextInt();
+        System.out.println("Ingrese los puntos de experiencia: ");
+        int puntos_xp = leer.nextInt();
+
+        System.out.println("Ingrese los puntos de vida: ");
+        int hp = leer.nextInt();
+        System.out.println("Ingrese el ataque: ");
+        int atk = leer.nextInt();
+        System.out.println("Ingrese la defensa: ");
+        int def = leer.nextInt();
+        System.out.println("Ingrese el especial: ");
+        int sp= leer.nextInt();
+        System.out.println("Ingrese la velocidad del pokemon: ");
+        int spe = leer.nextInt();
+        System.out.println("Ingrese el estado actual: ");
+        String estado = leer2.nextLine();
+      //  caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
+        
     }
 }
