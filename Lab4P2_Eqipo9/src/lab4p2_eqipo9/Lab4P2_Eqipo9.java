@@ -1,13 +1,15 @@
 
 package lab4p2_eqipo9;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
 
 static Scanner leer = new Scanner(System.in);//para enteros
 static Scanner leer2 = new Scanner(System.in);//para strings
-
+static ArrayList<Entrenador> entrenadores = new ArrayList();
+static ArrayList<pokemon> caja = new ArrayList();
 
     public static void main(String[] args) {
         
@@ -107,7 +109,19 @@ static Scanner leer2 = new Scanner(System.in);//para strings
         int spe = leer.nextInt();
         System.out.println("Ingrese el estado actual: ");
         String estado = leer2.nextLine();
-      //  caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
+         caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
         
+    }
+    public static void agregar_entrenador() {
+        System.out.println("Ingrese el nombre del entrenador: ");
+        String nombre = leer2.nextLine();
+        System.out.println("Ingrese la edad: ");
+        int edad = leer.nextInt();
+        System.out.println("Ingrese el dinero en la cuenta: ");
+        int dinero = leer.nextInt();
+        System.out.println("---pokemones del entrenador---");
+        agregar_pokemon();
+        entrenadores.add(new Entrenador(nombre, edad, dinero));
+
     }
 }
