@@ -1,6 +1,8 @@
 
 package lab4p2_eqipo9;
 
+import java.util.Random;
+
 
 public class especial extends movimiento{
     private int puntos_poderE;
@@ -55,6 +57,28 @@ public class especial extends movimiento{
     @Override
     public String toString() {
         return "especial{" + "puntos_poderE=" + puntos_poderE + ", puntos_precisionE=" + puntos_precisionE + '}';
+    }
+
+    
+    public int ataque(pokemon poke1, pokemon poke2) {
+        
+        Random ran = new Random();
+        Random ran2 = new Random();
+        
+        int num1 = 1+ran.nextInt(50);
+        int num2 = 100+ran.nextInt(500);
+        
+        int suma = poke1.getSp()+poke2.getSp();
+        int hp = poke2.getHp();
+        
+        if(suma==num2){
+            num1=num1*2;
+     
+            hp=hp-num1;
+            
+        }
+        
+        return hp;
     }
     
     

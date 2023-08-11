@@ -1,8 +1,6 @@
 
 package lab4p2_eqipo9;
 
-
-
 import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
@@ -46,6 +44,43 @@ static Scanner leer2 = new Scanner(System.in);//para strings
         }//fin while
     }
     
-    
-   
+    public static void agregar_movimiento() {
+        movimiento[] movimiento = new movimiento[4];
+
+        System.out.println("Ingrese el tipo de movimiento [1.Estado\n2.Fisico\n3.Especial]");
+        int tipo = leer2.nextInt();
+        if (tipo == 1) {
+            System.out.println("Ingrese el nombre del movimiento: ");
+            String nombre = leer2.nextLine();
+            System.out.println("Ingrese la descripcion del movimiento: ");
+            String descripcion = leer2.nextLine();
+            System.out.println("Ingrese el problema de estado que afecta al rival: ");
+            String problema_estado = leer2.nextLine();
+            movimiento[0] = new estado(problema_estado, nombre, descripcion);
+
+        } else if (tipo == 2) {
+            System.out.println("Ingrese el nombre del movimiento: ");
+            String nombre = leer2.nextLine();
+            System.out.println("Ingrese la descripcion del movimiento: ");
+            String descripcion = leer2.nextLine();
+            System.out.println("Ingrese los puntos de poder");
+            int puntos_poder = leer2.nextInt();
+            System.out.println("Ingrese los puntos de precision");
+            int puntos_precision = leer2.nextInt();
+            movimiento[0] = new fisico(puntos_poder, puntos_precision, nombre, descripcion);
+
+        } else if (tipo == 3) {
+            System.out.println("Ingrese el nombre del movimiento: ");
+            String nombre = leer2.nextLine();
+            System.out.println("Ingrese la descripcion del movimiento: ");
+            String descripcion = leer2.nextLine();
+            System.out.println("Ingrese los puntos de poder");
+            int puntos_poderE = leer2.nextInt();
+            System.out.println("Ingrese los puntos de precision");
+            int puntos_precisionE = leer2.nextInt();
+            movimiento[0] = new especial(puntos_poderE, puntos_precisionE, nombre, descripcion);
+
+
+        }
+    }
 }

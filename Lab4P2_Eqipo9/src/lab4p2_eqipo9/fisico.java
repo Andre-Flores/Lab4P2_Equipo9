@@ -1,6 +1,8 @@
 
 package lab4p2_eqipo9;
 
+import java.util.Random;
+
 /**
  *
  * @author JD
@@ -59,4 +61,24 @@ public class fisico extends movimiento {
     public String toString() {
         return "fisico{" + "puntos_poder=" + puntos_poder + ", puntos_precision=" + puntos_precision + '}';
     }   
+
+    
+    public int ataque(pokemon poke1, pokemon poke2) {
+        
+        Random ran = new Random();
+        
+        int num = 1+ran.nextInt(50);
+        // hay que validar cual es el pokemon mas rapido 
+        if(poke1.getAtk()>poke2.getDef()){
+            num=num*2;
+        }
+        if(poke1.getAtk()<poke2.getDef()){
+            num=num/2;
+        }
+        if(poke1.getAtk()==poke2.getDef()){
+            num=num-poke2.getHp();
+        }
+        
+        return num;
+    }
 }

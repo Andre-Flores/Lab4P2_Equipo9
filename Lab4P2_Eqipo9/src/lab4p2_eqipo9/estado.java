@@ -52,8 +52,8 @@ public class estado extends movimiento {
         return "estado{" + "problema_estado=" + problema_estado + '}';
     }
 
-    @Override
-    public int ataque() {
+    
+    public int ataque(pokemon poke1, pokemon poke2) {
         Random ran = new Random();
         
         int num=1+ran.nextInt(100);

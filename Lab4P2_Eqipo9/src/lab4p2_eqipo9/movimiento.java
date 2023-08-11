@@ -37,5 +37,5 @@ public abstract class movimiento {
         return "movimiento{" + "nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
     
-    public abstract int ataque();
+    public abstract int ataque(pokemon poke1,pokemon poke2);
 }
