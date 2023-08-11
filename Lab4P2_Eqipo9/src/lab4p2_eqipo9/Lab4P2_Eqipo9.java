@@ -1,4 +1,3 @@
-
 package lab4p2_eqipo9;
 
 import java.util.ArrayList;
@@ -6,13 +5,13 @@ import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
 
-static Scanner leer = new Scanner(System.in);//para enteros
-static Scanner leer2 = new Scanner(System.in);//para strings
-static ArrayList<Entrenador> entrenadores = new ArrayList();
-static ArrayList<pokemon> caja = new ArrayList();
+    static Scanner leer = new Scanner(System.in);//para enteros
+    static Scanner leer2 = new Scanner(System.in);//para strings
+    static ArrayList<Entrenador> entrenadores = new ArrayList();
+    static ArrayList<pokemon> caja = new ArrayList();
 
     public static void main(String[] args) {
-        
+
         System.out.println("---Menu de Pokemon---");
         int opcion = 0;
         while (opcion != 5) {
@@ -28,15 +27,15 @@ static ArrayList<pokemon> caja = new ArrayList();
                     agregar_entrenador();
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
                     agregar_movimiento();
                     break;
-                case 5: 
+                case 5:
                     System.out.println("Saliendo del menu...");
                     break;
                 default:
@@ -46,7 +45,7 @@ static ArrayList<pokemon> caja = new ArrayList();
 
         }//fin while
     }
-    
+
     public static void agregar_movimiento() {
         movimiento[] movimiento = new movimiento[4];
 
@@ -83,10 +82,9 @@ static ArrayList<pokemon> caja = new ArrayList();
             int puntos_precisionE = leer.nextInt();
             movimiento[0] = new especial(puntos_poderE, puntos_precisionE, nombre, descripcion);
 
-
         }
     }
-    
+
     public static void agregar_pokemon() {
         movimiento[] movimiento = new movimiento[4];
 
@@ -104,14 +102,15 @@ static ArrayList<pokemon> caja = new ArrayList();
         System.out.println("Ingrese la defensa: ");
         int def = leer.nextInt();
         System.out.println("Ingrese el especial: ");
-        int sp= leer.nextInt();
+        int sp = leer.nextInt();
         System.out.println("Ingrese la velocidad del pokemon: ");
         int spe = leer.nextInt();
         System.out.println("Ingrese el estado actual: ");
         String estado = leer2.nextLine();
-         caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
-        
+        caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
+
     }
+
     public static void agregar_entrenador() {
         System.out.println("Ingrese el nombre del entrenador: ");
         String nombre = leer2.nextLine();
@@ -120,7 +119,7 @@ static ArrayList<pokemon> caja = new ArrayList();
         System.out.println("Ingrese el dinero en la cuenta: ");
         int dinero = leer.nextInt();
         System.out.println("---pokemones del entrenador---");
-        agregar_pokemon();
+
         entrenadores.add(new Entrenador(nombre, edad, dinero));
 
     }
