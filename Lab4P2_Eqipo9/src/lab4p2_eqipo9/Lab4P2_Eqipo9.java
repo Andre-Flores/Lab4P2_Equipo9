@@ -25,7 +25,7 @@ static ArrayList<pokemon> caja = new ArrayList();
             opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
-                    
+                    agregar_entrenador();
                     break;
                 case 2:
                     
