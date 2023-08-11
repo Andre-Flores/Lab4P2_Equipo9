@@ -2,7 +2,7 @@
 package lab4p2_eqipo9;
 
 
-public class movimiento {
+public abstract class movimiento {
 
     String nombre;
     String descripcion;
@@ -36,4 +36,6 @@ public class movimiento {
     public String toString() {
         return "movimiento{" + "nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
+    
+    public abstract int ataque();
 }

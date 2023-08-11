@@ -1,6 +1,7 @@
 
 package lab4p2_eqipo9;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -50,6 +51,18 @@ public class estado extends movimiento {
     public String toString() {
         return "estado{" + "problema_estado=" + problema_estado + '}';
     }
+
+    @Override
+    public int ataque() {
+        Random ran = new Random();
+        
+        int num=1+ran.nextInt(100);
+        
+        // la validadcion debe ser en el main
+        return num;
+        
+    }
     
+  
    
 }

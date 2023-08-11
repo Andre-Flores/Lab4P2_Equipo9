@@ -2,6 +2,7 @@
 package lab4p2_eqipo9;
 
 
+
 import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
