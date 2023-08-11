@@ -10,26 +10,26 @@ public class pokemon {
     private String especie;
     private int nivel;
     private int puntos_xp;
-    private int[] movement = new int[4];
+    private int[] movimiento = new int[4];
     private int hp;
     private int atk;
     private int def;
-    private int esp;
-    private int vel;
+    private int sp;
+    private int spe;
     private String estado;
 
     public pokemon() {
     }
 
-    public pokemon(String especie, int nivel, int puntos_xp, int hp, int atk, int def, int esp, int vel, String estado) {
+    public pokemon(String especie, int nivel, int puntos_xp, int hp, int atk, int def, int sp, int spe, String estado) {
         this.especie = especie;
         this.nivel = nivel;
         this.puntos_xp = puntos_xp;
         this.hp = hp;
         this.atk = atk;
         this.def = def;
-        this.esp = esp;
-        this.vel = vel;
+        this.sp = sp;
+        this.spe = spe;
         this.estado = estado;
     }
 
@@ -57,12 +57,12 @@ public class pokemon {
         this.puntos_xp = puntos_xp;
     }
 
-    public int[] getMovement() {
-        return movement;
+    public int[] getMovimiento() {
+        return movimiento;
     }
 
-    public void setMovement(int[] movement) {
-        this.movement = movement;
+    public void setMovimiento(int[] movimiento) {
+        this.movimiento = movimiento;
     }
 
     public int getHp() {
@@ -89,20 +89,20 @@ public class pokemon {
         this.def = def;
     }
 
-    public int getEsp() {
-        return esp;
+    public int getSp() {
+        return sp;
     }
 
-    public void setEsp(int esp) {
-        this.esp = esp;
+    public void setSp(int sp) {
+        this.sp = sp;
     }
 
-    public int getVel() {
-        return vel;
+    public int getSpe() {
+        return spe;
     }
 
-    public void setVel(int vel) {
-        this.vel = vel;
+    public void setSpe(int spe) {
+        this.spe = spe;
     }
 
     public String getEstado() {
@@ -115,6 +115,6 @@ public class pokemon {
 
     @Override
     public String toString() {
-        return "pokemon{" + "especie=" + especie + ", nivel=" + nivel + ", puntos_xp=" + puntos_xp + ", movement=" + movement + ", hp=" + hp + ", atk=" + atk + ", def=" + def + ", esp=" + esp + ", vel=" + vel + ", estado=" + estado + '}';
+        return "pokemon{" + "especie=" + especie + ", nivel=" + nivel + ", puntos_xp=" + puntos_xp + ", movimiento=" + movimiento + ", hp=" + hp + ", atk=" + atk + ", def=" + def + ", sp=" + sp + ", spe=" + spe + ", estado=" + estado + '}';
     }
 }
