@@ -12,30 +12,34 @@ static Scanner leer2 = new Scanner(System.in);//para strings
 
     public static void main(String[] args) {
         
-        System.out.println("---Menu de Pokemones---");
+        System.out.println("---Menu de Pokemon---");
         int opcion = 0;
-        while (opcion != 4) {
-            System.out.println("1.Registrar entrenador"
-                    + "2.Battle factory"
-                    + "3.Capturar/Entrenar"
-                    + "4.Anadir movimento");
-            System.out.println("Ingrese la opcion: ");
+        while (opcion != 5) {
+            System.out.println("1.Registrar entrenador\n"
+                    + "2.Battle factory\n"
+                    + "3.Capturar/Entrenar\n"
+                    + "4.Anadir movimento\n"
+                    + "5. salir");
+            System.out.println("Ingrese la opcion: \n");
             opcion = leer.nextInt();
-            if (opcion == 1) {
-                   
-                
-                   
-                   
+            switch (opcion) {
+                case 1:
                     
-            } else if (opcion == 2) {
-
-            } else if (opcion == 3) {
-
-            } else if (opcion == 4) {
-                System.out.println("Saliendo del menu...");
-
-            } else {
-                System.out.println("La opcion ingresada es invalida");
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    break;
+                case 5: 
+                    System.out.println("Saliendo del menu...");
+                    break;
+                default:
+                    System.out.println("La opcion ingresada es invalida");
+                    break;
             }
 
         }//fin while
