@@ -1,12 +1,14 @@
 
 package lab4p2_eqipo9;
 
+
 import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
 
 static Scanner leer = new Scanner(System.in);//para enteros
 static Scanner leer2 = new Scanner(System.in);//para strings
+
 
     public static void main(String[] args) {
         
@@ -20,7 +22,11 @@ static Scanner leer2 = new Scanner(System.in);//para strings
             System.out.println("Ingrese la opcion: ");
             opcion = leer.nextInt();
             if (opcion == 1) {
-
+                   
+                
+                   
+                   
+                    
             } else if (opcion == 2) {
 
             } else if (opcion == 3) {
@@ -35,4 +41,6 @@ static Scanner leer2 = new Scanner(System.in);//para strings
         }//fin while
     }
     
+    
+   
 }

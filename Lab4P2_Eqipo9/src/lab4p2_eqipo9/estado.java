@@ -1,15 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lab4p2_eqipo9;
+
+import java.util.Scanner;
 
 /**
  *
  * @author JD
  */
+ 
 public class estado extends movimiento {
-
+    Scanner leer = new Scanner(System.in);
+    
     String problema_estado;
 
     public estado(String nombre, String descripcion) {
@@ -50,4 +51,5 @@ public class estado extends movimiento {
         return "estado{" + "problema_estado=" + problema_estado + '}';
     }
     
+   
 }
