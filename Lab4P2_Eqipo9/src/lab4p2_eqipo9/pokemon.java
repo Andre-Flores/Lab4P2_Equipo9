@@ -7,6 +7,7 @@ public class pokemon {
     private String especie;
     private int nivel;
     private int puntos_xp;
+    private int xp_necesaria;
     private int[] movimiento = new int[4];
     private int hp;
     private int atk;
@@ -18,16 +19,25 @@ public class pokemon {
     public pokemon() {
     }
 
-    public pokemon(String especie, int nivel, int puntos_xp, int hp, int atk, int def, int sp, int spe, String estado) {
+    public pokemon(String especie, int nivel, int puntos_xp, int xp_necesaria, int hp, int atk, int def, int sp, int spe, String estado) {
         this.especie = especie;
         this.nivel = nivel;
         this.puntos_xp = puntos_xp;
+        this.xp_necesaria = xp_necesaria;
         this.hp = hp;
         this.atk = atk;
         this.def = def;
         this.sp = sp;
         this.spe = spe;
         this.estado = estado;
+    }
+
+    public int getXp_necesaria() {
+        return xp_necesaria;
+    }
+
+    public void setXp_necesaria(int xp_necesaria) {
+        this.xp_necesaria = xp_necesaria;
     }
 
     public String getEspecie() {

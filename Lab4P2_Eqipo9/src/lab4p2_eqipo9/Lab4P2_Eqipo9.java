@@ -53,18 +53,40 @@ public class Lab4P2_Eqipo9 {
                             Random rand = new Random();
                             int numRan1,numRan2;
                             
+                            listarEntrenadores(entrenadores);
+                            System.out.println("seleccione un entrenador: ");
+                            int posi=leer.nextInt();
+                            
+//                            System.out.println("pokemons de la caja");
+//                            for (int i = 0; i < Ent.getCaja().size(); i++) {
+//                                System.out.println(Ent.getCaja());
+//                            }
+                            System.out.println("pokemons del equipo");
+                            for (int i = 0; i < Ent.getEquipo().length; i++) {
+                                System.out.println(Ent.getEquipo()[i]);
+                            }
+                            System.out.println("Seleccione un pokemon: ");
+                            int opcionPoke = leer.nextInt();
+                            
+                            while(opcionPoke<Ent.getEquipo().length){
+                                System.out.println("no hay pokemons en esa posicion..");
+                                opcionPoke = leer.nextInt();
+                            } 
+                            
                             
                             numRan1 = 0+rand.nextInt(2);
                             numRan2 = 100+rand.nextInt(4999);
                             
                             int total = numRan1*numRan2;
                             
-                            int niveles= total/pok.getNivel();
-                            int nivelAnt = pok.getNivel();
-                            
-                            pok.setNivel(niveles+nivelAnt);
+                            int niveles= total/entrenadores.get(posi).getEquipo()[opcionPoke].getXp_necesaria();
+                            int nivelAnt = entrenadores.get(posi).getEquipo()[opcionPoke].getNivel();
                             
                             
+                            entrenadores.get(posi).getEquipo()[opcionPoke].setNivel(niveles+nivelAnt);
+                            
+                            System.out.println("entrenamiento finalizado");
+                                                        
                             
                         }else if(op_==2){
                         
@@ -144,7 +166,9 @@ public class Lab4P2_Eqipo9 {
         int nivel = leer.nextInt();
         System.out.println("Ingrese los puntos de experiencia: ");
         int puntos_xp = leer.nextInt();
-
+        
+        System.out.println("Ingrese la exp necesaria para subir de level:");
+        int xp_necesaria=leer.nextInt();
         System.out.println("Ingrese los puntos de vida: ");
         int hp = leer.nextInt();
         System.out.println("Ingrese el ataque: ");
@@ -161,10 +185,10 @@ public class Lab4P2_Eqipo9 {
         int op=leer.nextInt();
         if(op==1){
            
-            Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
+            Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp,xp_necesaria, hp, atk, def, sp, spe, estado));
         }else{
            
-            pokemon Po = new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado);
+            pokemon Po = new pokemon(especie, nivel, puntos_xp,xp_necesaria, hp, atk, def, sp, spe, estado);
             //Ent.getEquipo();
             for (int i = 0; i < Ent.getEquipo().length; i++) {
              
