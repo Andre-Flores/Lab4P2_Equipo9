@@ -28,7 +28,8 @@ public class Lab4P2_Eqipo9 {
                     agregar_entrenador();
                     break;
                 case 2:
-
+                    //battle factory
+                    
                     break;
                 case 3:
                     // capturar y entrenar 
@@ -48,7 +49,7 @@ public class Lab4P2_Eqipo9 {
                         System.out.println("Desea [1]entrenar o [2]capturar: ");
                         int op_ = leer.nextInt();
 
-                        if (op_ == 1) {
+                        if (op_== 1) {
 
                             Random rand = new Random();
                             int numRan1, numRan2;
@@ -96,7 +97,7 @@ public class Lab4P2_Eqipo9 {
                             
                             
                             
-                            agregar_pokemon(entrenadores.get(entrena-1));
+                            agregar_pokemon(entrenadores, entrena);
 
                         } else {
                             System.out.println("Opcion erronea---");
@@ -161,7 +162,7 @@ public class Lab4P2_Eqipo9 {
         }
     }
 
-    public static void agregar_pokemon(Entrenador Ent) {
+    public static void agregar_pokemon(ArrayList <Entrenador>entrenadores,int pos) {
         movimiento[] movimiento = new movimiento[4];
 
         System.out.println("ingrese la especie: ");
@@ -190,15 +191,15 @@ public class Lab4P2_Eqipo9 {
         if (op == 1) {
              pokemon Po = new pokemon(especie, nivel, puntos_xp, xp_necesaria, hp, atk, def, sp, spe, estado);
             //Ent.getEquipo();
-            for (int i = 0; i < Ent.getEquipo().length; i++) {
+            for (int i = 0; i < entrenadores.get(pos).getEquipo().length; i++) {
                 
-                 Ent.getEquipo()[i] = Po;
+                 entrenadores.get(pos).getEquipo()[i] = Po;
                 
             }
             System.out.println("Agregado God");
         } else {
 
-           Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp, xp_necesaria, hp, atk, def, sp, spe, estado));
+           entrenadores.get(pos).getCaja().add(new pokemon(especie, nivel, puntos_xp, xp_necesaria, hp, atk, def, sp, spe, estado));
             System.out.println("Agregado God ");
         }
 
