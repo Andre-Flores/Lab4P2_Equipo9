@@ -61,6 +61,14 @@ public class Entrenador {
 
     @Override
     public String toString() {
-        return "entrenador{" + "nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + ", equipo=" + equipo + ", caja=" + caja + '}';
+        return "entrenador{" + "nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + ", equipo=" + metodo() + ", caja=" + caja + '}';
+    }
+    
+    public String metodo(){
+        String sal="";
+        for (int i = 0; i < equipo.length; i++) {
+            sal+=equipo[i]+", ";
+        }
+        return sal;
     }
 }

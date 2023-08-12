@@ -35,73 +35,78 @@ public class Lab4P2_Eqipo9 {
                     Entrenador Ent = new Entrenador();
                     pokemon pok = new pokemon();
                     listarEntrenadores(entrenadores);
-                    
+
                     System.out.println("Ingrese el entrenador(posicion) con el que quiere capturar o entrenar pokemons: ");
-                    int pos=leer.nextInt();
-                    
-                    System.out.println("Entrenador elegido: "+entrenadores.get(pos));
-                    
-                    int resp=1;
-                    int a=0;
-                    while(resp==1){
-                        
+                    int pos = leer.nextInt();
+
+                    System.out.println("Entrenador elegido: " + entrenadores.get(pos-1));
+
+                    int resp = 1;
+                    int a = 0;
+                    while (resp == 1) {
+
                         System.out.println("Desea [1]entrenar o [2]capturar: ");
-                        int op_=leer.nextInt();
-                        
-                        if(op_==1){
-                            
+                        int op_ = leer.nextInt();
+
+                        if (op_ == 1) {
+
                             Random rand = new Random();
-                            int numRan1,numRan2;
+                            int numRan1, numRan2;
                             
+                           
                             listarEntrenadores(entrenadores);
                             System.out.println("seleccione un entrenador: ");
-                            int posi=leer.nextInt();
-                            
+                            int posi = leer.nextInt();
+
 //                            System.out.println("pokemons de la caja");
 //                            for (int i = 0; i < Ent.getCaja().size(); i++) {
 //                                System.out.println(Ent.getCaja());
 //                            }
                             System.out.println("pokemons del equipo");
-                            for (int i = 0; i < Ent.getEquipo().length; i++) {
-                                System.out.println(Ent.getEquipo()[i]);
+                            for (int i = 0; i < entrenadores.get(posi).getEquipo().length; i++) {
+                                System.out.println(entrenadores.get(posi).getEquipo()[i]);
                             }
                             System.out.println("Seleccione un pokemon: ");
                             int opcionPoke = leer.nextInt();
-                            
-                            while(opcionPoke<Ent.getEquipo().length){
+
+                            while (opcionPoke < Ent.getEquipo().length) {
                                 System.out.println("no hay pokemons en esa posicion..");
                                 opcionPoke = leer.nextInt();
-                            } 
-                            
-                            
-                            numRan1 = 0+rand.nextInt(2);
-                            numRan2 = 100+rand.nextInt(4999);
-                            
-                            int total = numRan1*numRan2;
-                            
-                            int niveles= total/entrenadores.get(posi).getEquipo()[opcionPoke].getXp_necesaria();
+                            }
+
+                            numRan1 = 0 + rand.nextInt(2);
+                            numRan2 = 100 + rand.nextInt(4999);
+
+                            int total = numRan1 * numRan2;
+
+                            int niveles = total / entrenadores.get(posi).getEquipo()[opcionPoke].getXp_necesaria();
                             int nivelAnt = entrenadores.get(posi).getEquipo()[opcionPoke].getNivel();
-                            
-                            
-                            entrenadores.get(posi).getEquipo()[opcionPoke].setNivel(niveles+nivelAnt);
-                            
+
+                            entrenadores.get(posi).getEquipo()[opcionPoke].setNivel(niveles + nivelAnt);
+
                             System.out.println("entrenamiento finalizado");
-                                                        
                             
-                        }else if(op_==2){
-                        
-                        agregar_pokemon(Ent);
-                        
-                        }else{
+                            
+
+                        } else if (op_ == 2) {
+                            
+                            listarEntrenadores(entrenadores);
+                            System.out.println("ingrese la posicion del entrenador: ");
+                            int entrena = leer.nextInt();
+                            
+                            
+                            
+                            agregar_pokemon(entrenadores.get(entrena-1));
+
+                        } else {
                             System.out.println("Opcion erronea---");
                         }
-                        
+
                         System.out.println("desea continuar trabajando: ");
-                        resp=leer.nextInt();
-                        
+                        resp = leer.nextInt();
+
                     }
-                    
-                    
+
                     break;
                 case 4:
                     agregar_movimiento();
@@ -158,17 +163,16 @@ public class Lab4P2_Eqipo9 {
 
     public static void agregar_pokemon(Entrenador Ent) {
         movimiento[] movimiento = new movimiento[4];
-        
-        
+
         System.out.println("ingrese la especie: ");
         String especie = leer2.nextLine();
         System.out.println("ingrese el nivel del pokemon: ");
         int nivel = leer.nextInt();
         System.out.println("Ingrese los puntos de experiencia: ");
         int puntos_xp = leer.nextInt();
-        
+
         System.out.println("Ingrese la exp necesaria para subir de level:");
-        int xp_necesaria=leer.nextInt();
+        int xp_necesaria = leer.nextInt();
         System.out.println("Ingrese los puntos de vida: ");
         int hp = leer.nextInt();
         System.out.println("Ingrese el ataque: ");
@@ -181,24 +185,23 @@ public class Lab4P2_Eqipo9 {
         int spe = leer.nextInt();
         System.out.println("Ingrese el estado actual: ");
         String estado = leer2.nextLine();
-        System.out.println("Lo quiere mandar a la caja? [1-Si\n2-No]");
-        int op=leer.nextInt();
-        if(op==1){
-           
-            Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp,xp_necesaria, hp, atk, def, sp, spe, estado));
-        }else{
-           
-            pokemon Po = new pokemon(especie, nivel, puntos_xp,xp_necesaria, hp, atk, def, sp, spe, estado);
+        System.out.println("Lo quiere mandar al equipo? [1-Si\n2-No]");
+        int op = leer.nextInt();
+        if (op == 1) {
+             pokemon Po = new pokemon(especie, nivel, puntos_xp, xp_necesaria, hp, atk, def, sp, spe, estado);
             //Ent.getEquipo();
             for (int i = 0; i < Ent.getEquipo().length; i++) {
-             
-                if(Ent.getEquipo()[i]==null){
-                   Ent.getEquipo()[i]=Po;
-                }
+                
+                 Ent.getEquipo()[i] = Po;
+                
+            }
+            System.out.println("Agregado God");
+        } else {
+
+           Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp, xp_necesaria, hp, atk, def, sp, spe, estado));
+            System.out.println("Agregado God ");
         }
-        }
-        
-        
+
     }
 
     public static void agregar_entrenador() {
@@ -208,15 +211,15 @@ public class Lab4P2_Eqipo9 {
         int edad = leer.nextInt();
         System.out.println("Ingrese el dinero en la cuenta: ");
         int dinero = leer.nextInt();
-       
 
         entrenadores.add(new Entrenador(nombre, edad, dinero));
 
     }
-    public static void listarEntrenadores(ArrayList entrenadores){
-        
+
+    public static void listarEntrenadores(ArrayList entrenadores) {
+
         for (int i = 0; i < entrenadores.size(); i++) {
-            System.out.println((i+1)+" -"+ entrenadores.get(i));
+            System.out.println((i + 1) + " -" + entrenadores.get(i));
         }
     }
 }
