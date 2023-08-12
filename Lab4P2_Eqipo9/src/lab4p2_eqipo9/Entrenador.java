@@ -7,7 +7,7 @@ public class Entrenador {
     private String nombre;
     private int edad;
     private int dinero;
-    private int[] equipo = new int[6];
+    private pokemon[] equipo = new pokemon[6];
     private ArrayList<pokemon> caja = new ArrayList();
 
     public Entrenador() {
@@ -43,11 +43,11 @@ public class Entrenador {
         this.dinero = dinero;
     }
 
-    public int[] getEquipo() {
+    public pokemon[] getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(int[] equipo) {
+    public void setEquipo(pokemon[] equipo) {
         this.equipo = equipo;
     }
 

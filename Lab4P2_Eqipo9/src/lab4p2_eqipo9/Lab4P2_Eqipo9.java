@@ -1,6 +1,7 @@
 package lab4p2_eqipo9;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Lab4P2_Eqipo9 {
@@ -30,7 +31,55 @@ public class Lab4P2_Eqipo9 {
 
                     break;
                 case 3:
-
+                    // capturar y entrenar 
+                    Entrenador Ent = new Entrenador();
+                    pokemon pok = new pokemon();
+                    listarEntrenadores(entrenadores);
+                    
+                    System.out.println("Ingrese el entrenador(posicion) con el que quiere capturar o entrenar pokemons: ");
+                    int pos=leer.nextInt();
+                    
+                    System.out.println("Entrenador elegido: "+entrenadores.get(pos));
+                    
+                    int resp=1;
+                    int a=0;
+                    while(resp==1){
+                        
+                        System.out.println("Desea [1]entrenar o [2]capturar: ");
+                        int op_=leer.nextInt();
+                        
+                        if(op_==1){
+                            
+                            Random rand = new Random();
+                            int numRan1,numRan2;
+                            
+                            
+                            numRan1 = 0+rand.nextInt(2);
+                            numRan2 = 100+rand.nextInt(4999);
+                            
+                            int total = numRan1*numRan2;
+                            
+                            int niveles= total/pok.getNivel();
+                            int nivelAnt = pok.getNivel();
+                            
+                            pok.setNivel(niveles+nivelAnt);
+                            
+                            
+                            
+                        }else if(op_==2){
+                        
+                        agregar_pokemon(Ent);
+                        
+                        }else{
+                            System.out.println("Opcion erronea---");
+                        }
+                        
+                        System.out.println("desea continuar trabajando: ");
+                        resp=leer.nextInt();
+                        
+                    }
+                    
+                    
                     break;
                 case 4:
                     agregar_movimiento();
@@ -85,9 +134,10 @@ public class Lab4P2_Eqipo9 {
         }
     }
 
-    public static void agregar_pokemon() {
+    public static void agregar_pokemon(Entrenador Ent) {
         movimiento[] movimiento = new movimiento[4];
-
+        
+        
         System.out.println("ingrese la especie: ");
         String especie = leer2.nextLine();
         System.out.println("ingrese el nivel del pokemon: ");
@@ -107,8 +157,24 @@ public class Lab4P2_Eqipo9 {
         int spe = leer.nextInt();
         System.out.println("Ingrese el estado actual: ");
         String estado = leer2.nextLine();
-        caja.add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
-
+        System.out.println("Lo quiere mandar a la caja? [1-Si\n2-No]");
+        int op=leer.nextInt();
+        if(op==1){
+           
+            Ent.getCaja().add(new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado));
+        }else{
+           
+            pokemon Po = new pokemon(especie, nivel, puntos_xp, hp, atk, def, sp, spe, estado);
+            //Ent.getEquipo();
+            for (int i = 0; i < Ent.getEquipo().length; i++) {
+             
+                if(Ent.getEquipo()[i]==null){
+                   Ent.getEquipo()[i]=Po;
+                }
+        }
+        }
+        
+        
     }
 
     public static void agregar_entrenador() {
@@ -118,9 +184,15 @@ public class Lab4P2_Eqipo9 {
         int edad = leer.nextInt();
         System.out.println("Ingrese el dinero en la cuenta: ");
         int dinero = leer.nextInt();
-        System.out.println("---pokemones del entrenador---");
+       
 
         entrenadores.add(new Entrenador(nombre, edad, dinero));
 
+    }
+    public static void listarEntrenadores(ArrayList entrenadores){
+        
+        for (int i = 0; i < entrenadores.size(); i++) {
+            System.out.println((i+1)+" -"+ entrenadores.get(i));
+        }
     }
 }
