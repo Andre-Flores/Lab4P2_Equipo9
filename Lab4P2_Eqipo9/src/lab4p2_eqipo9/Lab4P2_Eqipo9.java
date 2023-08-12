@@ -29,6 +29,38 @@ public class Lab4P2_Eqipo9 {
                     break;
                 case 2:
                     //battle factory
+                    listarEntrenadores(entrenadores);
+                    
+                    System.out.println("Ingrese la posisicion del entrenador 1: ");
+                    int entre1= leer.nextInt();
+                    
+                    System.out.println("Ingrese la posicion del entrenador 2: ");
+                    int entre2 = leer.nextInt();
+                    
+                    if(entre1>=1 && entre1<=entrenadores.size() && entre2>=1 && entre2<=entrenadores.size()){
+                        
+                        Entrenador entrenador1 = entrenadores.get(entre1-1);
+                        Entrenador entrenador2 = entrenadores.get(entre2-1);
+                        
+                        System.out.println("entrenador 1: ");
+                        for (int i = 0; i < entrenadores.get(entre1-1).getEquipo().length; i++) {
+                                System.out.println(entrenadores.get(entre1-1).getEquipo()[i]);
+                            }
+                        System.out.println("entrenador 2:");
+                        for (int i = 0; i < entrenadores.get(entre2-1).getEquipo().length; i++) {
+                                System.out.println(entrenadores.get(entre2-1).getEquipo()[i]);
+                            }
+                        
+                        
+                        
+                        
+                        
+                    }else{
+                        System.out.println("fuera de rango");
+                        break;
+                    }
+                    
+                    
                     
                     break;
                 case 3:
@@ -64,8 +96,8 @@ public class Lab4P2_Eqipo9 {
 //                                System.out.println(Ent.getCaja());
 //                            }
                             System.out.println("pokemons del equipo");
-                            for (int i = 0; i < entrenadores.get(posi).getEquipo().length; i++) {
-                                System.out.println(entrenadores.get(posi).getEquipo()[i]);
+                            for (int i = 0; i < entrenadores.get(posi-1).getEquipo().length; i++) {
+                                System.out.println(entrenadores.get(posi-1).getEquipo()[i]);
                             }
                             System.out.println("Seleccione un pokemon: ");
                             int opcionPoke = leer.nextInt();
@@ -193,7 +225,10 @@ public class Lab4P2_Eqipo9 {
             //Ent.getEquipo();
             for (int i = 0; i < entrenadores.get(pos).getEquipo().length; i++) {
                 
-                 entrenadores.get(pos).getEquipo()[i] = Po;
+                if (entrenadores.get(pos).getEquipo()[i]==null) {
+                    entrenadores.get(pos).getEquipo()[i] = Po;
+                }
+                 
                 
             }
             System.out.println("Agregado God");
